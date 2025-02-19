@@ -12,6 +12,7 @@ int main(void)
         printf("Enter 'Unpause' to unpause process\n");
         printf("Enter 'Find' to find process by it's name'\n");
         printf("Enter 'Help' to show this info again\n");
+        printf("Enter 'Exit' to close this program\n);
     }
 
     //enter command request
@@ -43,6 +44,10 @@ int main(void)
             case "Help":
                 show_menu();
                 break
+
+            case "Exit":
+                f_exit;
+                break;
 
             default:
                 printf("Unknown input, try again\n");
