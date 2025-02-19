@@ -5,12 +5,14 @@ int main(void)
     //variables
     char cmd[10];
 
-    //welcome screen
-    printf("Console Task Manager\n");
-    printf("Enter 'List' to get a list of tasks\n");
-    printf("Enter 'Kill' to enter killing process menu\n");
-    printf("Enter 'Pause' to enter pause process menu\n");
-    printf("Enter 'Unpause' to enter unpause process menu\n");
+    void show_menu() {
+        printf("Enter 'List' to get the list of processes\n");
+        printf("Enter 'Kill' to kill process\n");
+        printf("Enter 'Pause' to pause process\n");
+        printf("Enter 'Unpause' to unpause process\n");
+        printf("Enter 'Find' to find process by it's name'\n");
+        printf("Enter 'Help' to show this info again\n);
+    }
 
     //enter command request
     void cmd_switcher() {
@@ -34,9 +36,19 @@ int main(void)
                 f_unpause();
                 break;
 
+            case "Find":
+                f_find();
+                break;
+
+            case "Help":
+                show_menu();
+                break
+
             default:
-                printf("Unknown input, try again\n")
+                printf("Unknown input, try again\n");
+                printf("Enter 'Help' to get the list of commands\n");
                 cmd_switcher();
+                break;
         }
 
     }
