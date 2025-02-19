@@ -11,7 +11,7 @@ int main(void)
         printf("Enter 'Pause' to pause process\n");
         printf("Enter 'Unpause' to unpause process\n");
         printf("Enter 'Find' to find process by it's name'\n");
-        printf("Enter 'Help' to show this info again\n);
+        printf("Enter 'Help' to show this info again\n");
     }
 
     //enter command request
