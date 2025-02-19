@@ -1,4 +1,9 @@
+#include <windows.h>
 #include <stdio.h>
+#include <tchar.h>
+#include <psapi.h>
+
+
 
 int main(void)
 {
