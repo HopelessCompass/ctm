@@ -1,14 +1,9 @@
-#include <windows.h>
 #include <stdio.h>
-#include <tchar.h>
-#include <psapi.h>
-
-
 
 int main(void)
 {
     //variables
-    char cmd[10]
+    char cmd[10];
 
     //welcome screen
     printf("Console Task Manager\n");
@@ -18,6 +13,33 @@ int main(void)
     printf("Enter 'Unpause' to enter unpause process menu\n");
 
     //enter command request
-    scanf("%s", &cmd);
+    void cmd_switcher() {
+
+        scanf("%s", &cmd);
+
+        switch (cmd){
+            case "List":
+                f_list();
+                break;
+
+            case "Kill":
+                f_kill();
+                break;
+
+            case "Pause":
+                f_pause();
+                break;
+
+            case "Unpause":
+                f_unpause();
+                break;
+
+            default:
+                printf("Unknown input, try again\n")
+                cmd_switcher();
+        }
+
+    }
+
     return 0;
 }
