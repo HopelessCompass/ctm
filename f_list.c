@@ -4,6 +4,7 @@
 
 int getPIDbyProcName(const char * procname) {
  int pid = 0;
+
  DWORD Procs[1024], bytesReturned, NumOfProcesses;
  TCHAR szProcessName[MAX_PATH];
  
