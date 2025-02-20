@@ -1,2 +1,5 @@
 *.exe
 f_find.obj
+*.ipch
+*.vsidx
+/.vs

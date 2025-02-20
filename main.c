@@ -5,66 +5,51 @@
 #include "f_list.c"
 #include "f_scan.c"
 
+char cmd[20];
 
-int main(void)
-{
-    //variables
-    char cmd[10];
+void show_menu() {
+	printf("Enter 'List' to get the list of processes\n");
+	printf("Enter 'Kill' to kill process\n");
+	printf("Enter 'Pause' to pause process\n");
+	printf("Enter 'Unpause' to unpause process\n");
+	printf("Enter 'Find' to find process by it's name'\n");
+	printf("Enter 'Help' to show this info again\n");
+	printf("Enter 'Exit' to close this program\n");
+}
+void cmd_switcher() {
+    while (1) {
+        scanf("%s", cmd);
 
-    show_menu();
-
-    void show_menu() {
-        printf("Enter 'List' to get the list of processes\n");
-        printf("Enter 'Kill' to kill process\n");
-        printf("Enter 'Pause' to pause process\n");
-        printf("Enter 'Unpause' to unpause process\n");
-        printf("Enter 'Find' to find process by it's name'\n");
-        printf("Enter 'Help' to show this info again\n");
-        printf("Enter 'Exit' to close this program\n);
-    }
-
-    //enter command request
-    void cmd_switcher() {
-
-        scanf("%s", &cmd);
-
-        switch (cmd){
-            case "List":
-                f_list();
-                break;
-
-            case "Kill":
-                f_kill();
-                break;
-
-            case "Pause":
-                f_pause();
-                break;
-
-            case "Unpause":
-                f_unpause();
-                break;
-
-            case "Find":
-                f_find();
-                break;
-
-            case "Help":
-                show_menu();
-                break;
-
-            case "Exit":
-                f_exit;
-                break;
-
-            default:
-                printf("Unknown input, try again\n");
-                printf("Enter 'Help' to get the list of commands\n");
-                cmd_switcher();
-                break;
+        if (strcmp(cmd, "List") == 0) {
+            f_list();
         }
-
+        else if (strcmp(cmd, "Kill") == 0) {
+            f_kill();
+        }
+        else if (strcmp(cmd, "Pause") == 0) {
+            f_pause();
+        }
+        else if (strcmp(cmd, "Unpause") == 0) {
+            f_unpause();
+        }
+        else if (strcmp(cmd, "Find") == 0) {
+            f_find();
+        }
+        else if (strcmp(cmd, "Help") == 0) {
+            show_menu();
+        }
+        else if (strcmp(cmd, "Exit") == 0) {
+            f_exit();
+            break;
+        }
+        else {
+            printf("Unknown input, try again\n");
+            printf("Enter 'Help' to get the list of commands\n");
+        }
     }
+}
 
-    return 0;
+int main(void) {
+	show_menu();
+	return 0;
 }

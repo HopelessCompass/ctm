@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+void f_find() {
 
     char process_name[20];
     printf("Enter a process name to look for\n");
