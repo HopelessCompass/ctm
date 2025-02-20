@@ -1,9 +1,12 @@
 #include <stdio.h>
+#include "process_list.c"
 
 int main(void)
 {
     //variables
     char cmd[10];
+
+    show_menu();
 
     void show_menu() {
         printf("Enter 'List' to get the list of processes\n");
@@ -43,7 +46,7 @@ int main(void)
 
             case "Help":
                 show_menu();
-                break
+                break;
 
             case "Exit":
                 f_exit;
