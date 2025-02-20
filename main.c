@@ -1,6 +1,10 @@
 #include <stdio.h>
-#include "process_list.c"
+
 #include "f_find.c"
+#include "f_kill.c"
+#include "f_list.c"
+#include "f_scan.c"
+
 
 int main(void)
 {
